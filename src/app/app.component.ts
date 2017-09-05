@@ -1,47 +1,41 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+import {Http} from '@angular/http';
+import { UiSwitchModule } from 'angular2-ui-switch';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'my-app',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.css']
 })
-export class AppComponent {
-  
-  images:Array<Object> = [];
 
-  constructor() {}
+export class AppComponent implements OnInit{
+    message:string = 'hello';
 
-  handleDrop(e) {
-    var files:File = e.dataTransfer.files;
-    var self = this;
-    Object.keys(files).forEach((key) => {
-      if(files[key].type === "image/png" || files[key].type === "image/jpeg") {
-        self.images.push(files[key]);
-      }
-      else {
-        alert("File must be a PNG or JPEG!");
-      }
-    });
+    constructor(){}
 
-    return false;
-  }
+    ngOnInit(){
+        // grab users
+        // this.http.get('https://reqres.in/api/users?page=2')
+        //     .map(res => res.json().data)
+        //     .subscribe(users => this.users = users);
 
-  imageStats() {
-
-    let sizes:Array<number> = [];
-    let totalSize:number = 0;
-
-    this
-      .images
-      .forEach((image:File) => sizes.push(image.size));
-
-    sizes
-      .forEach((size:number) => totalSize += size);
-
-    return {
-      size: totalSize,
-      count: this.images.length
+        // this.http.get('https://reqres.in/api/users?page=2')
+        //     .toPromise()
+        //     .then(data =>{
+        //         console.log(data)
+        //     });
+        // this.service.getUsers()
+        //     .subscribe(
+        //         users => this.users = users,
+        //         err =>{
+        //             //show error msg
+        //         }
+        //     );
     }
+    // getUsers(){
+    //     return this.http.get('http://blambloom.com/api/comments')
+    // }
 
-  }
+    // getUsers().subscribe(users => console.log(users));
+
 }

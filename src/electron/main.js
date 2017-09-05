@@ -6,14 +6,19 @@ const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
 const url = require('url')
-
+var iconPath = path.join(__dirname, '/../src/app/assets/OfficeTime_icon.png');
+console.log(iconPath)
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1200, height: 900})
+  mainWindow = new BrowserWindow({
+          width: 500,
+          height: 400,
+          icon: iconPath
+      })
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
