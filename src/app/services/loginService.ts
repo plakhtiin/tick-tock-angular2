@@ -19,7 +19,9 @@ export class LoginService {
             username: username,
             password: password
         };
-
+        let token:string = 'abc';
+         localStorage.setItem('authToken', token);
+        return token;
         // return this.http.post(config.serverUrl + '/api/login', params)
         //     .map((response: Response) => {
         //         response.json();

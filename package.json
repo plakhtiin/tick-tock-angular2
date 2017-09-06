@@ -1,5 +1,5 @@
 {
-  "name": "angular2-electron",
+  "name": "Tick-tock",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
@@ -17,9 +17,11 @@
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
+    "angular2-fontawesome": "^0.9.3",
     "angular2-moment": "^1.7.0",
     "angular2-ui-switch": "^1.2.0",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
     "moment": "^2.18.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.7.6"

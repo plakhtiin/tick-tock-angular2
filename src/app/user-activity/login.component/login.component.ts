@@ -20,6 +20,8 @@ export class LogInComponent implements OnInit{
         this.userLogIn.password = '';
     }
 
+    @Output() userLogin = new EventEmitter();
+
     ngOnInit(){
         this.loginService.getToken()
         //     .then(function (data) {
@@ -31,7 +33,8 @@ export class LogInComponent implements OnInit{
     }
 
     onSubmit(){
-        this.loginService.login(this.userLogIn.email ,this.userLogIn.password)
+        let userToken:string = this.loginService.login(this.userLogIn.email ,this.userLogIn.password);
+        this.userLogin.emit(userToken);
             // .then(function (data) {
             //     // $state.go('start');
             // }, function (err) {

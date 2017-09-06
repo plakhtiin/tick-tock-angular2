@@ -45,13 +45,6 @@ var connectionTester = require('connection-tester');
     // All workers use this port
     var listener = app.listen(port, function () {
         console.log('Server listening at port ' + listener.address().port);
-        var j =0;
-        for(var i=0; i<200; i++) {
-            connectionTester.test('localhost', 8888, 500, function (err, output) {
-                console.log(output, j);
-                j++;
-            });
-        }
     });
     app.use(bodyParser.json())
         .get('/', function (req, res, next) {

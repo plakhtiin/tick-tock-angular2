@@ -12,6 +12,11 @@ export class CreateNewUser{
     role: string;
 }
 
+export class systemRoleObject {
+    id: string;
+    name: string;
+}
+
 @Component({
     selector: 'new-user',
     templateUrl: 'new-user.component.html'
@@ -21,11 +26,11 @@ export class NewUserComponent implements OnInit{
     message:string = 'hello';
     userData: CreateNewUser = new CreateNewUser();
 
-    systemRoles : Object = {
-        admin: 'Administrator',
-        manager: 'Manager',
-        user: 'User'
-    };
+    systemRoles : Array<systemRoleObject> = [
+        {id: 'admin', name: 'Administrator'},
+        {id: 'manager', name: 'Manager'},
+        {id: 'user', name: 'User'}
+    ];
 
     constructor(private mainService: MainService){
 
